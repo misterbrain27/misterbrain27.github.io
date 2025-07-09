@@ -205,14 +205,14 @@ function App() {
               {[
                 {
                   title: "Développeur Full Stack",
-                  company: "TechCorp",
+                  company: "",
                   period: "2022 - Présent",
-                  description: "éveloppement d'applications web de A à Z, de la conception à la mise en production",
+                  description: "Développement d'applications web de A à Z, de la conception à la mise en production",
                   technologies: ["Angular", "Python", "Docker", "GCP"]
                 },
                 {
                   title: "Développeur Full Stack",
-                  company: "StartupInc",
+                  company: "",
                   period: "2020 - 2022",
                   description: "Développement d'applications web de A à Z, de la conception à la mise en production. Collaboration étroite avec les équipes UX/UI.",
                   technologies: ["Vue.js", "Python", "PostgreSQL", "Redis"]
@@ -222,7 +222,7 @@ function App() {
                   company: "",
                   period: "2019 - 2020",
                   description: "Création d'interfaces utilisateur modernes et responsives pour des clients variés. Intégration d'APIs REST ",
-                  technologies: ["React", "TypeScript", "Sass", "GraphQL"]
+                  technologies: ["Python", "Django", "API REST"]
                 }
               ].map((exp, index) => (
                 <div key={index} className="relative flex items-start">
