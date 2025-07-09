@@ -204,11 +204,11 @@ function App() {
             <div className="space-y-12">
               {[
                 {
-                  title: "Lead Developer",
+                  title: "Développeur Full Stack",
                   company: "TechCorp",
                   period: "2022 - Présent",
-                  description: "Direction d'une équipe de 5 développeurs sur des projets web complexes. Mise en place d'architectures microservices et optimisation des performances.",
-                  technologies: ["React", "Node.js", "Docker", "AWS"]
+                  description: "éveloppement d'applications web de A à Z, de la conception à la mise en production",
+                  technologies: ["Angular", "Python", "Docker", "GCP"]
                 },
                 {
                   title: "Développeur Full Stack",
@@ -218,10 +218,10 @@ function App() {
                   technologies: ["Vue.js", "Python", "PostgreSQL", "Redis"]
                 },
                 {
-                  title: "Développeur Frontend",
-                  company: "WebAgency",
+                  title: "Développeur Backend",
+                  company: "",
                   period: "2019 - 2020",
-                  description: "Création d'interfaces utilisateur modernes et responsives pour des clients variés. Intégration d'APIs REST et GraphQL.",
+                  description: "Création d'interfaces utilisateur modernes et responsives pour des clients variés. Intégration d'APIs REST ",
                   technologies: ["React", "TypeScript", "Sass", "GraphQL"]
                 }
               ].map((exp, index) => (
