@@ -172,6 +172,8 @@ function App() {
                 <a 
                   href="https://www.linkedin.com/in/david-a-59a427ba/"
                   className="flex items-center gap-2 px-6 py-3 border border-gray-600 hover:border-blue-500 rounded-lg transition-colors"
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
                   <Linkedin size={20} />
                   <span>LinkedIn</span>
