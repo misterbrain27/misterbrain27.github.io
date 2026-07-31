@@ -63,7 +63,7 @@ export const Profile: React.FC = () => {
                               <span>GitHub</span>
                           </a>
                           <a
-                              href="https://www.linkedin.com/in/david-a-59a427ba/"
+                              href="https://www.linkedin.com/in/david-abitbol-dev/"
                               className="flex items-center gap-2 px-6 py-3 border border-gray-600 hover:border-blue-500 rounded-lg transition-colors"
                               target="_blank"
                               rel="noopener noreferrer"
