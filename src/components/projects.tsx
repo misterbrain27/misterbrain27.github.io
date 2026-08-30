@@ -1,5 +1,6 @@
 import React from 'react';
 import { Github, ExternalLink } from 'lucide-react';
+import financialDocImage from '../assets/images/projects/illustration-analyse-financiere.webp';
 
 
 interface Project {
@@ -13,6 +14,14 @@ interface Project {
 
 export const Projects: React.FC = () => {
   const projects: Project[] = [
+      {
+          title: "Financial-doc-analyzer ",
+          description: "Système RAG (Retrieval-Augmented Generation) full-stack d'analyse de documents financiers français",
+          image: "",
+          technologies: [ "FastAPI", "Angular","Ollama", "PostgreSQL", "SQLAlchemy 2"],
+          github: "#",
+          demo: "#"
+      },
       {
           title: "Application de test de compétences ",
           description: "Quiz personnalisable par le recruteur pour profil comptable, finance ou gestion ",
