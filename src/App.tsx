@@ -5,12 +5,22 @@ import {Experience} from "./components/experiences.tsx";
 import {Skills} from "./components/skills.tsx";
 import {Projects} from "./components/projects.tsx";
 import {Footer} from "./components/footer.tsx";
+import {FinancialDocAnalyzerDemo} from "./components/financialDocAnalyzerDemo.tsx";
 
 function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('profile');
+  const [activeDemo, setActiveDemo] = useState<string | null>(null);
+
+  const readDemoFromUrl = () => {
+    const params = new URLSearchParams(window.location.search);
+    const demo = params.get('demo');
+    setActiveDemo(demo);
+  };
 
   useEffect(() => {
+    readDemoFromUrl();
+
     const handleScroll = () => {
       const sections = ['profile', 'experience', 'skills', 'projects'];
       const scrollPosition = window.scrollY + 100;
@@ -27,8 +37,16 @@ function App() {
       }
     };
 
+    const handleUrlChange = () => {
+      readDemoFromUrl();
+    };
+
     window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener('popstate', handleUrlChange);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('popstate', handleUrlChange);
+    };
   }, []);
 
   const scrollToSection = (sectionId: string) => {
@@ -38,6 +56,18 @@ function App() {
     }
     setIsMenuOpen(false);
   };
+
+  const closeDemoPage = () => {
+    const url = new URL(window.location.href);
+    url.searchParams.delete('demo');
+    window.history.pushState({}, '', url);
+    setActiveDemo(null);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  if (activeDemo === 'financial-doc-analyzer') {
+    return <FinancialDocAnalyzerDemo onBack={closeDemoPage} />;
+  }
 
   return (
     <div className="min-h-screen bg-gray-900 text-white">

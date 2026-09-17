@@ -1,7 +1,6 @@
 import React from 'react';
-import { Github, ExternalLink } from 'lucide-react';
-import financialDocImage from '../assets/images/projects/illustration-analyse-financiere.webp';
-
+import { ExternalLink } from 'lucide-react';
+import ingestionGif from '../assets/financialdemorag/ingestionH264.gif';
 
 interface Project {
   title: string;
@@ -17,10 +16,10 @@ export const Projects: React.FC = () => {
       {
           title: "Financial-doc-analyzer ",
           description: "Système RAG (Retrieval-Augmented Generation) full-stack d'analyse de documents financiers français",
-          image: "",
+          image: ingestionGif,
           technologies: [ "FastAPI", "Angular","Ollama", "PostgreSQL", "SQLAlchemy 2"],
-          github: "#",
-          demo: "#"
+          github: "https://github.com/misterbrain27/open-financial-doc-analyzer",
+          demo: "/?demo=financial-doc-analyzer"
       },
       {
           title: "Application de test de compétences ",
@@ -71,14 +70,23 @@ export const Projects: React.FC = () => {
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                  {projects.map((project, index) => (
-                      <div key={index} className="bg-gray-800 rounded-lg overflow-hidden hover:transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl">
-                          <div className="relative h-48 overflow-hidden">
-                              <img
-                                  src={project.image}
-                                  alt={project.title}
-                                  className="w-full h-full object-cover"
-                              />
+                  {projects.map((project, index) => {
+                      const hasImage = Boolean(project.image);
+
+                      return (
+                      <div key={index} className="bg-gray-800 rounded-xl overflow-hidden hover:transform hover:scale-[1.02] transition-all duration-300 shadow-lg hover:shadow-2xl border border-white/5">
+                          <div className="relative h-52 overflow-hidden bg-slate-900">
+                              {hasImage ? (
+                                  <img
+                                      src={project.image}
+                                      alt={project.title}
+                                      className={`w-full h-full ${project.title.trim() === 'Financial-doc-analyzer' ? 'object-contain p-3 bg-slate-950/80' : 'object-cover'}`}
+                                  />
+                              ) : (
+                                  <div className="flex h-full items-center justify-center bg-gradient-to-br from-slate-700 to-slate-900 text-xs uppercase tracking-[0.2em] text-slate-400">
+                                      Project
+                                  </div>
+                              )}
                               <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-transparent to-transparent"></div>
                           </div>
                           <div className="p-6">
@@ -95,12 +103,21 @@ export const Projects: React.FC = () => {
                                   <a
                                       href={project.github}
                                       className="flex items-center gap-2 px-4 py-2 border border-gray-600 hover:border-blue-500 rounded transition-colors"
-                                  >
-                                      <Github size={16} />
+                                   target="_blank" rel="noopener noreferrer">
+                                      
                                       <span>Code</span>
                                   </a>
                                   <a
                                       href={project.demo}
+                                      onClick={(event) => {
+                                          if (project.title.trim() === 'Financial-doc-analyzer') {
+                                              event.preventDefault();
+                                              const url = new URL(window.location.href);
+                                              url.searchParams.set('demo', 'financial-doc-analyzer');
+                                              window.history.pushState({}, '', url);
+                                              window.dispatchEvent(new PopStateEvent('popstate'));
+                                          }
+                                      }}
                                       className="flex items-center gap-2 px-4 py-2 bg-blue-600 hover:bg-blue-700 rounded transition-colors"
                                   >
                                       <ExternalLink size={16} />
@@ -109,7 +126,8 @@ export const Projects: React.FC = () => {
                               </div>
                           </div>
                       </div>
-                  ))}
+                      );
+                  })}
               </div>
           </div>
       </section>
