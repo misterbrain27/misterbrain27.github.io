@@ -62,56 +62,56 @@ interface FinancialDocAnalyzerDemoProps {
 
 export const FinancialDocAnalyzerDemo = ({ onBack }: FinancialDocAnalyzerDemoProps) => {
   return (
-    <div className="min-h-screen bg-[#eef3f6] text-slate-900">
-      <header className="sticky top-0 z-20 border-b border-slate-200 bg-[#eef3f6]/90 backdrop-blur-sm">
+    <div className="min-h-screen bg-slate-950 text-slate-100">
+      <header className="sticky top-0 z-20 border-b border-slate-800 bg-slate-950/80 backdrop-blur-sm">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
           <button
             type="button"
             onClick={onBack}
-            className="inline-flex items-center gap-2 rounded-full border border-slate-300 bg-white/80 px-4 py-2 text-sm font-medium text-slate-700 shadow-sm transition hover:border-cyan-500 hover:text-cyan-700"
+            className="inline-flex items-center gap-2 rounded-full border border-slate-700 bg-slate-900/80 px-4 py-2 text-sm font-medium text-slate-200 shadow-sm transition hover:border-cyan-400 hover:text-cyan-300"
           >
             <ArrowLeft size={16} />
             Portfolio
           </button>
 
           <div className="flex items-center gap-3">
-            <div className="flex h-10 w-10 items-center justify-center rounded-full bg-cyan-100 text-cyan-700 shadow-sm">
+            <div className="flex h-10 w-10 items-center justify-center rounded-full bg-cyan-500/10 text-cyan-300 shadow-sm ring-1 ring-cyan-400/30">
               <Search size={18} />
             </div>
             <div>
-              <div className="text-xl font-black tracking-tight text-slate-900">FinancialRAG</div>
-              <div className="text-xs text-slate-500">Analyse de documents financiers</div>
+              <div className="text-xl font-black tracking-tight text-white">FinancialRAG</div>
+              <div className="text-xs text-slate-400">Analyse de documents financiers</div>
             </div>
           </div>
         </div>
       </header>
 
       <main className="relative mx-auto max-w-7xl px-4 pb-16 pt-8 sm:px-6 lg:px-8">
-        <div className="absolute inset-x-0 top-28 h-48 bg-gradient-to-r from-cyan-100/40 via-sky-100/40 to-indigo-100/40 blur-3xl" />
+        <div className="absolute inset-x-0 top-28 h-48 bg-gradient-to-r from-cyan-500/10 via-sky-500/10 to-indigo-500/10 blur-3xl" />
 
         <div className="relative">
           <div className="mb-8 flex justify-end gap-3">
-            <button className="rounded-full border border-slate-300 bg-white px-4 py-2 text-sm font-medium text-slate-700 shadow-sm hover:border-cyan-500">
+            <button className="rounded-full border border-slate-700 bg-slate-900/80 px-4 py-2 text-sm font-medium text-slate-200 shadow-sm hover:border-cyan-400 hover:text-cyan-300">
               Upload
             </button>
-            <button className="rounded-full border border-cyan-500 bg-cyan-500/10 px-4 py-2 text-sm font-medium text-cyan-700 shadow-sm hover:bg-cyan-500/20">
+            <button className="rounded-full border border-cyan-400 bg-cyan-500/10 px-4 py-2 text-sm font-medium text-cyan-300 shadow-sm hover:bg-cyan-500/20">
               Chat
             </button>
           </div>
 
           <div className="grid gap-6 md:grid-cols-3">
             {processCards.map(({ title, icon: Icon, items, accent }) => (
-              <div key={title} className="rounded-[24px] border border-slate-200 bg-white/80 p-5 shadow-[0_18px_40px_rgba(15,23,42,0.08)] backdrop-blur-sm">
+              <div key={title} className="rounded-[24px] border border-slate-800 bg-slate-900/80 p-5 shadow-[0_18px_40px_rgba(15,23,42,0.35)] backdrop-blur-sm">
                 <div className="mb-4 flex items-center justify-between">
-                  <div className="text-[18px] font-bold text-slate-800">{title}</div>
+                  <div className="text-[18px] font-bold text-slate-100">{title}</div>
                   <div className={`flex h-10 w-10 items-center justify-center rounded-full ${accent}`}>
                     <Icon size={18} />
                   </div>
                 </div>
 
                 {title === 'Formats supportés' ? (
-                  <div className="flex h-28 items-center justify-center rounded-2xl border border-dashed border-slate-300 bg-slate-50">
-                    <div className="relative flex h-20 w-20 items-center justify-center rounded-xl bg-red-500 text-white shadow-lg shadow-red-200">
+                  <div className="flex h-28 items-center justify-center rounded-2xl border border-dashed border-slate-700 bg-slate-950/70">
+                    <div className="relative flex h-20 w-20 items-center justify-center rounded-xl bg-red-500 text-white shadow-lg shadow-red-500/20">
                       <FileText size={26} />
                       <span className="absolute bottom-2 right-2 text-[10px] font-bold">PDF</span>
                     </div>
@@ -119,8 +119,8 @@ export const FinancialDocAnalyzerDemo = ({ onBack }: FinancialDocAnalyzerDemoPro
                 ) : (
                   <div className="space-y-3">
                     {items.map((item) => (
-                      <div key={item} className="flex items-center gap-3 text-sm text-slate-700">
-                        <span className="flex h-5 w-5 items-center justify-center rounded-full bg-emerald-100 text-emerald-600">
+                      <div key={item} className="flex items-center gap-3 text-sm text-slate-200">
+                        <span className="flex h-5 w-5 items-center justify-center rounded-full bg-emerald-500/15 text-emerald-300">
                           <Check size={12} />
                         </span>
                         {item}
@@ -198,17 +198,17 @@ export const FinancialDocAnalyzerDemo = ({ onBack }: FinancialDocAnalyzerDemoPro
           </div>
 
           <div className="relative mt-10 flex items-center justify-center">
-            <div className="w-full max-w-4xl rounded-[24px] border border-slate-300 bg-[#eff3f6] p-5 shadow-[0_20px_40px_rgba(15,23,42,0.08)]">
-              <div className="flex items-center gap-3 text-slate-700">
-                <div className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-cyan-100 text-cyan-700">
+            <div className="w-full max-w-4xl rounded-[24px] border border-slate-700 bg-slate-900/80 p-5 shadow-[0_20px_40px_rgba(2,6,23,0.35)]">
+              <div className="flex items-center gap-3 text-slate-200">
+                <div className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-cyan-500/10 text-cyan-300 ring-1 ring-cyan-400/20">
                   <ShieldCheck size={22} />
                 </div>
                 <input
                   value="Quel est le chiffre d’affaires de l’exercice ?"
                   readOnly
-                  className="flex-1 rounded-2xl border border-slate-200 bg-white px-4 py-3 text-slate-700 outline-none"
+                  className="flex-1 rounded-2xl border border-slate-700 bg-slate-950/70 px-4 py-3 text-slate-200 outline-none"
                 />
-                <button className="flex h-12 w-12 items-center justify-center rounded-full bg-cyan-500 text-white shadow-lg shadow-cyan-200 hover:bg-cyan-600">
+                <button className="flex h-12 w-12 items-center justify-center rounded-full bg-cyan-500 text-white shadow-lg shadow-cyan-500/30 hover:bg-cyan-400">
                   <ChevronRight size={18} />
                 </button>
               </div>
@@ -229,8 +229,8 @@ export const FinancialDocAnalyzerDemo = ({ onBack }: FinancialDocAnalyzerDemoPro
               media: verificationVideo,
               poster: verificationGif,
             }].map(({ title, media, poster }) => (
-              <div key={title} className="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-[0_18px_30px_rgba(15,23,42,0.06)]">
-                <div className="border-b border-slate-200 bg-slate-50 px-3 py-2 text-sm font-semibold text-slate-700">{title}</div>
+              <div key={title} className="overflow-hidden rounded-2xl border border-slate-800 bg-slate-900 shadow-[0_18px_30px_rgba(15,23,42,0.22)]">
+                <div className="border-b border-slate-700 bg-slate-800/80 px-3 py-2 text-sm font-semibold text-slate-200">{title}</div>
                 <video
                   src={media}
                   poster={poster}
