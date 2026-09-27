@@ -13,11 +13,11 @@ export const Footer: React.FC = () => {
                       <a href="#" className="text-gray-400 hover:text-blue-400 transition-colors">
                           <Github size={24} />
                       </a>
-                      <a href="https://www.linkedin.com/in/david-a-59a427ba/" className="text-gray-400 hover:text-blue-400 transition-colors"
+                      <a href="https://www.linkedin.com/in/david-abitbol-dev/" className="text-gray-400 hover:text-blue-400 transition-colors"
                          target="_blank">
                           <Linkedin size={24} />
                       </a>
-                      <a href="https://www.linkedin.com/in/david-a-59a427ba/"
+                      <a href="https://www.linkedin.com/in/david-abitbol-dev/"
                          target="_blank"
                          className="text-gray-400 hover:text-blue-400 transition-colors">
                           <Mail size={24} />
