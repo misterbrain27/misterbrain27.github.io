@@ -1,6 +1,7 @@
 import React from 'react';
 import { ExternalLink } from 'lucide-react';
 import ingestionGif from '../assets/financialdemorag/ingestionH264.gif';
+import homeGif from '../assets/skills/home.gif';
 
 interface Project {
   title: string;
@@ -24,7 +25,7 @@ export const Projects: React.FC = () => {
       {
           title: "Application de test de compétences ",
           description: "Quiz personnalisable par le recruteur pour profil comptable, finance ou gestion ",
-          image: "",
+          image: homeGif,
           technologies: ["Django", "Django Rest", "Angular","Celery", "PostgreSQL"],
           github: "#",
           demo: "#"
