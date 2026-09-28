@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowRight, Briefcase, Download, Github, Linkedin, Mail, MapPin, Phone, Sparkles } from 'lucide-react';
+import { ArrowRight, Briefcase, Github, Linkedin, Mail, MapPin, Phone, Sparkles } from 'lucide-react';
 import ingestionGif from '../assets/financialdemorag/ingestionH264.gif';
 
 export const Profile: React.FC = () => {
@@ -44,13 +44,6 @@ export const Profile: React.FC = () => {
                       </div>
 
                       <div className="mt-10 flex flex-wrap justify-center gap-4 lg:justify-start">
-                          <a
-                              href="#"
-                              className="inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 px-5 py-3 text-sm font-semibold text-white shadow-[0_15px_30px_rgba(59,130,246,0.35)] transition hover:brightness-110"
-                          >
-                              <Download size={18} />
-                              Télécharger CV
-                          </a>
                           <a
                               href="https://github.com/misterbrain27"
                               className="inline-flex items-center gap-2 rounded-xl border border-slate-700 bg-slate-900/70 px-5 py-3 text-sm font-semibold text-slate-100 transition hover:border-cyan-400 hover:bg-slate-800"
